@@ -72,7 +72,7 @@ let currentState, statesArr, currentScore, numFailures;
 
 
 /*----- cached element references -----*/
-
+const stateBoardPEls = document.querySelectorAll('td p');
 
 
 
@@ -85,7 +85,7 @@ let currentState, statesArr, currentScore, numFailures;
 
 
 
-/*----- functions -----*/
+/*----- Functions -----*/
 
 function init() {
     statesArr = Object.keys(statesObj);
@@ -95,6 +95,8 @@ function init() {
     numFailures = 0;
 }
 
+/*----- Render Functions -----*/
+
 function render() {
     //Render statesCard
 
@@ -103,8 +105,17 @@ function render() {
     //Render Failures Board
 
     //Render States Board
-    
+
 }
+
+function renderStateBoard() {
+    //Update textContent of each p in each td
+    for (i = 0; i < stateBoardPEls.length; i++) {
+        stateBoardPEls[i].textContent = statesArr[i];
+    }
+}
+
+/*----- Misc Functions -----*/
 
 function randomizeStates() {
     statesArr.sort(() => Math.random() - 0.5);
