@@ -35,6 +35,29 @@ aside {
     justify-content: space-around;
 }
 
+#state-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    width: 80%;
+    height: 80%;
+}
+
+td {
+    border: 1px solid black; 
+    width: 25%;
+    height: 8%;
+}
+
+td p {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
 /*---------------------------Main Styles---------------------------*/
 
 main {
