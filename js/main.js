@@ -295,10 +295,6 @@ const statesObj = {
 /*----- app's state (variables) -----*/
 let currentState, statesArr, currentScore, numFailures, cardsCompleted;
 
-
-
-
-
 /*----- cached element references -----*/
 const stateBoardPEls = document.querySelectorAll('td p');
 const failureBadgeEls = document.querySelectorAll('div span');
@@ -307,14 +303,12 @@ const stateCardEl = document.querySelector('div.card');
 const scoreEl = document.querySelector('.score-value');
 
 
-
 /*----- event listeners -----*/
 resetBtnEl.addEventListener('click', handleResetBtn);
 stateCardEl.addEventListener('keydown', handleInput);
 
 
 /*----- Functions -----*/
-
 function init() {
     stateCardEl.innerHTML = '';
     resetBtnEl.textContent = 'PLAY';
@@ -325,11 +319,13 @@ function init() {
     cardsCompleted = 0;
     currentScore = 0;
     numFailures = 0;
-    render();
+    stateCardEl.addEventListener('animationend', function() {
+        stateCardEl.classList.remove('animated', 'bounceInDown');
+    });
+    render();   
 }
 
 /*----- Render Functions -----*/
-
 function render() {
     //Render statesCard
     if (stateCardEl.classList.contains('complete') || (cardsCompleted === 0 && numInputs === 0)) {
@@ -341,6 +337,7 @@ function render() {
     renderFailuresBoard();
     //Render States Board
     renderStateBoard();
+    //Check for loss
 }
 
 function renderFailuresBoard() {
@@ -361,6 +358,7 @@ function renderStateCard() {
     stateCardEl.appendChild(stateImage);
     //render inputs
     renderInputs();
+    stateCardEl.classList.add('animated', 'bounceInDown');
 }
 
 function renderInputs() {
@@ -395,10 +393,7 @@ function handleInput(evt) {
 
 
 
-
-
 /*----- Misc Functions -----*/
-
 function randomizeStates() {
     statesArr.sort(() => Math.random() - 0.5);
 }
