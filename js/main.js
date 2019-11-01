@@ -388,7 +388,6 @@ function handleResetBtn() {
 
 function handleInput(evt) {
     if (evt.keyCode === 13) {
-        console.log('verifying...')
         verifyInputs();
         renderFailuresBoard();
     }
@@ -410,15 +409,11 @@ function verifyInputs() {
     let currentBStates = statesObj[currentState].bStates;
     checkForTrue(inputArr, currentBStates);
     checkForFalse(inputArr, currentBStates);
-    if (checkForFalse() === true) {
-        return;
-    }
     checkForComplete(inputArr, currentBStates);
     
 }
 
 function checkForTrue(inputArr, currentBStates) {
-    console.log(`inputArr at chechForTrue: ${inputArr}`);
     inputArr.forEach(function(input) {
         currentBStates.forEach(function(state) {
             if (input.value === state) {
@@ -429,7 +424,6 @@ function checkForTrue(inputArr, currentBStates) {
 }
 
 function checkForFalse(inputArr, currentBStates) {
-    console.log(`inputArr at chechForFalse: ${inputArr}`);
     inputArr.forEach(function(input) {
         if (currentBStates.includes(input.value)) {
             return;
@@ -458,6 +452,6 @@ function checkForComplete(inputArr, currentBStates) {
         stateCardEl.innerHTML = '';  
         render();
     } else {
-        render();
+        renderFailuresBoard();
     }
 }
