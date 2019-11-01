@@ -27,6 +27,7 @@ I've always struggled to visualize the layout of the states in relation to each 
 
 Data structure is an object defined as 'statesObj' that includes key value pairs with the following format:
 
+```
 {
     ...,
     TX: {
@@ -37,6 +38,7 @@ Data structure is an object defined as 'statesObj' that includes key value pairs
     },
     ...
 }
+```
 
 ## Technologies Used
 
