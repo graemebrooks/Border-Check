@@ -7,10 +7,10 @@ I've always struggled to visualize the layout of the states in realtion to each 
 
 ## User Stories
 
-- AAU I want to be able to start the game with a play button
-- AAU I want my inputs to provide feedback whether true or failures
-- AAU I want to be able to see my current score, number of failures, and states completed
-- AAU I want to be able to reset the game at any point after play with a reset button
+- AAU I want to be able to start the game with a play button.
+- AAU I want my inputs to provide feedback that notifies me if I have correctly or incorrectly guessed the bordering state.
+- AAU I want to be able to see my current score, number of failures, and states completed.
+- AAU I want to be able to reset the game at any point after play with a reset button.
 
 ## Wireframes
 
@@ -25,7 +25,7 @@ I've always struggled to visualize the layout of the states in realtion to each 
 
 ## Data Structure
 
-statesObj = {
+`statesObj = {
     AL: {
         name: 'ALABAMA',
         id: '1',
@@ -314,7 +314,7 @@ statesObj = {
         bStates: [ 'NEBRASKA', 'SOUTH DAKOTA', 'UTAH', 'COLORADO', 'IDAHO', 'MONTANA'],
         imgFile: '',
     },
-}; 
+};` 
 
 ## Technologies Used
 
