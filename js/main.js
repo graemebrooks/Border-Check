@@ -332,7 +332,6 @@ function init() {
 
 function render() {
     //Render statesCard
-    console.log(`state card has class complete: ${stateCardEl.classList.contains('complete')}`)
     if (stateCardEl.classList.contains('complete') || (cardsCompleted === 0 && numInputs === 0)) {
         renderStateCard();
     } 
@@ -391,6 +390,7 @@ function handleInput(evt) {
     if (evt.keyCode === 13) {
         console.log('verifying...')
         verifyInputs();
+        renderFailuresBoard();
     }
 }
 
@@ -410,11 +410,15 @@ function verifyInputs() {
     let currentBStates = statesObj[currentState].bStates;
     checkForTrue(inputArr, currentBStates);
     checkForFalse(inputArr, currentBStates);
+    if (checkForFalse() === true) {
+        return;
+    }
     checkForComplete(inputArr, currentBStates);
     
 }
 
 function checkForTrue(inputArr, currentBStates) {
+    console.log(`inputArr at chechForTrue: ${inputArr}`);
     inputArr.forEach(function(input) {
         currentBStates.forEach(function(state) {
             if (input.value === state) {
@@ -425,6 +429,7 @@ function checkForTrue(inputArr, currentBStates) {
 }
 
 function checkForFalse(inputArr, currentBStates) {
+    console.log(`inputArr at chechForFalse: ${inputArr}`);
     inputArr.forEach(function(input) {
         if (currentBStates.includes(input.value)) {
             return;
@@ -434,6 +439,7 @@ function checkForFalse(inputArr, currentBStates) {
             numFailures += 1;
         }
     });
+    return true;
 }
 
 function checkForComplete(inputArr, currentBStates) {
@@ -441,8 +447,6 @@ function checkForComplete(inputArr, currentBStates) {
     for (i = 0; i < inputArr.length; i++) {
         if (inputArr[i].classList.contains('correct')) {
             correctGuesses.push(inputArr[i.value]);
-            console.log(`number of inputs: ${currentBStates.length}`)
-            console.log(`number of correct guesses: ${correctGuesses.length}`)
         }
     }
     if (correctGuesses.length === currentBStates.length) {
@@ -450,8 +454,9 @@ function checkForComplete(inputArr, currentBStates) {
         currentStateIndex = statesArr.indexOf(`${currentState}` );
         currentState = statesArr[(currentStateIndex + 1)];
         cardsCompleted += 1;
-        // stateCardEl.innerHTML = '';  
         stateCardEl.classList.add('complete');
+        stateCardEl.innerHTML = '';  
+        render();
     } else {
         render();
     }
