@@ -302,12 +302,13 @@ let currentState, statesArr, currentScore, numFailures;
 /*----- cached element references -----*/
 const stateBoardPEls = document.querySelectorAll('td p');
 const failureBadgeEls = document.querySelectorAll('div span');
+const resetBtnEl = document.getElementById('reset-btn');
 
 
 
 
 /*----- event listeners -----*/
-
+resetBtnEl.addEventListener('click', handleResetBtn);
 
 
 
@@ -316,11 +317,13 @@ const failureBadgeEls = document.querySelectorAll('div span');
 /*----- Functions -----*/
 
 function init() {
+    resetBtnEl.textContent = 'PLAY';
     statesArr = Object.keys(statesObj);
     randomizeStates();
     currentState = statesArr[0];
     currentScore = 0;
     numFailures = 0;
+    render();
 }
 
 /*----- Render Functions -----*/
@@ -349,6 +352,17 @@ function renderStateBoard() {
         stateBoardPEls[i].textContent = statesArr[i];
     }
 }
+
+/*----- Event Listener Functions -----*/
+function handleResetBtn() {
+    init();
+    resetBtnEl.textContent = 'RESTART';
+}
+
+
+
+
+
 
 /*----- Misc Functions -----*/
 
