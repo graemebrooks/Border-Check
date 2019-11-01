@@ -310,9 +310,7 @@ const scoreEl = document.querySelector('.score-value');
 
 /*----- event listeners -----*/
 resetBtnEl.addEventListener('click', handleResetBtn);
-
-
-
+stateCardEl.addEventListener('keydown', handleInput);
 
 
 /*----- Functions -----*/
@@ -384,6 +382,12 @@ function handleResetBtn() {
     resetBtnEl.textContent = 'RESTART';
 }
 
+function handleInput(evt) {
+    if (evt.keyCode === 13) {
+        console.log('verifying...')
+        verifyInputs();
+    }
+}
 
 
 
@@ -393,4 +397,32 @@ function handleResetBtn() {
 
 function randomizeStates() {
     statesArr.sort(() => Math.random() - 0.5);
+}
+
+function verifyInputs() {
+    let inputArr = document.querySelectorAll('input');
+    let currentBStates = statesObj[currentState].bStates;
+    let correctGuesses = [];
+    inputArr.forEach(function(input, idx) {
+        currentBStates.forEach(function(state) {
+            if (input.value === state) {
+                correctGuesses.push(input.value);
+                input.classList.add('correct');
+            }
+        });
+    });
+    let correct = true;
+    for (i = 0; i < inputArr.length; i++) {
+        correct = inputArr[i].classList.contains('correct');
+        if (correct === false) {
+            return;
+        }
+    }
+    if (correct === true) {
+        currentScore += 1;
+        currentStateIndex = statesArr.indexOf(`${currentState}` );
+        currentState = statesArr[(currentStateIndex + 1)];
+        stateCardEl.innerHTML = '';
+        render();
+    }
 }

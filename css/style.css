@@ -71,6 +71,10 @@ main {
 .card {
     width: 35%;
     height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /*---------------------------Reset Bar Styles---------------------------*/
@@ -93,4 +97,10 @@ main {
 img {
     height: 200px;
     width: 200px;
+}
+
+/*---------------------------Misc Styles---------------------------*/
+
+.correct {
+    background-color: limegreen;
 }
