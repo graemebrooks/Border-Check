@@ -39,7 +39,7 @@ const statesObj = {
     DE: {
         name: 'DELAWARE',
         id: '7',
-        bStates: [ 'NEW JERSEY', 'PENNSYLVANNIA', 'MARYLAND' ],
+        bStates: [ 'NEW JERSEY', 'PENNSYLVANIA', 'MARYLAND' ],
         imgFile: '',
     },
     FL: {
@@ -105,7 +105,7 @@ const statesObj = {
     MD: {
         name: 'MARYLAND',
         id: '18',
-        bStates: [ 'VIRGNIA', 'WEST VIRGINIA', 'DELAWARE', 'PENNSYLVANNIA'],
+        bStates: [ 'VIRGINIA', 'WEST VIRGINIA', 'DELAWARE', 'PENNSYLVANNIA'],
         imgFile: '',
     },
     MA: {
@@ -293,7 +293,7 @@ const statesObj = {
 
 
 /*----- app's state (variables) -----*/
-let currentState, statesArr, currentScore, numFailures;
+let currentState, statesArr, currentScore, numFailures, cardsCompleted;
 
 
 
@@ -320,7 +320,9 @@ function init() {
     resetBtnEl.textContent = 'PLAY';
     statesArr = Object.keys(statesObj);
     randomizeStates();
+    numInputs = 0;
     currentState = statesArr[0];
+    cardsCompleted = 0;
     currentScore = 0;
     numFailures = 0;
     render();
@@ -330,7 +332,10 @@ function init() {
 
 function render() {
     //Render statesCard
-    renderStateCard();
+    console.log(`state card has class complete: ${stateCardEl.classList.contains('complete')}`)
+    if (stateCardEl.classList.contains('complete') || (cardsCompleted === 0 && numInputs === 0)) {
+        renderStateCard();
+    } 
     //Render Score
     scoreEl.textContent = `${currentScore}`;
     //Render Failures Board
@@ -400,29 +405,54 @@ function randomizeStates() {
 }
 
 function verifyInputs() {
+    numInputs += 1;
     let inputArr = document.querySelectorAll('input');
     let currentBStates = statesObj[currentState].bStates;
-    let correctGuesses = [];
-    inputArr.forEach(function(input, idx) {
+    checkForTrue(inputArr, currentBStates);
+    checkForFalse(inputArr, currentBStates);
+    checkForComplete(inputArr, currentBStates);
+    
+}
+
+function checkForTrue(inputArr, currentBStates) {
+    inputArr.forEach(function(input) {
         currentBStates.forEach(function(state) {
             if (input.value === state) {
-                correctGuesses.push(input.value);
                 input.classList.add('correct');
             }
         });
     });
-    let correct = true;
-    for (i = 0; i < inputArr.length; i++) {
-        correct = inputArr[i].classList.contains('correct');
-        if (correct === false) {
+}
+
+function checkForFalse(inputArr, currentBStates) {
+    inputArr.forEach(function(input) {
+        if (currentBStates.includes(input.value)) {
             return;
+        } else if (input.value === '') {
+            return;
+        } else {
+            numFailures += 1;
+        }
+    });
+}
+
+function checkForComplete(inputArr, currentBStates) {
+    let correctGuesses = [];
+    for (i = 0; i < inputArr.length; i++) {
+        if (inputArr[i].classList.contains('correct')) {
+            correctGuesses.push(inputArr[i.value]);
+            console.log(`number of inputs: ${currentBStates.length}`)
+            console.log(`number of correct guesses: ${correctGuesses.length}`)
         }
     }
-    if (correct === true) {
+    if (correctGuesses.length === currentBStates.length) {
         currentScore += 1;
         currentStateIndex = statesArr.indexOf(`${currentState}` );
         currentState = statesArr[(currentStateIndex + 1)];
-        stateCardEl.innerHTML = '';
+        cardsCompleted += 1;
+        // stateCardEl.innerHTML = '';  
+        stateCardEl.classList.add('complete');
+    } else {
         render();
     }
 }
