@@ -1,19 +1,20 @@
-###Border Check
+### Border Check
 
 
-##Purpose
+## Purpose
 
 
-##User Stories
+## User Stories
 
 
-##Wireframes
+## Wireframes
+
+![Main View Wireframe](iamges/Homepage.png)
+
+## Stretch Goals
 
 
-##Stretch Goals
+## Data Structure
 
 
-##Data Structure
-
-
-##Technologies Used
+## Technologies Used
