@@ -229,7 +229,7 @@ const statesObj = {
         imgFile: '',
     },
     SD: {
-        name: 'SOUTH DAKPTA',
+        name: 'SOUTH DAKOTA',
         id: '39',
         bStates: [ 'NEBRASKA', 'NORTH DAKOTA', 'WYONMING', 'IOWA', 'MINNESOTA', 'MONTANA'],
         imgFile: '',
@@ -303,7 +303,8 @@ let currentState, statesArr, currentScore, numFailures;
 const stateBoardPEls = document.querySelectorAll('td p');
 const failureBadgeEls = document.querySelectorAll('div span');
 const resetBtnEl = document.getElementById('reset-btn');
-
+const stateCardEl = document.querySelector('div.card');
+const scoreEl = document.querySelector('.score-value');
 
 
 
@@ -317,6 +318,7 @@ resetBtnEl.addEventListener('click', handleResetBtn);
 /*----- Functions -----*/
 
 function init() {
+    stateCardEl.innerHTML = '';
     resetBtnEl.textContent = 'PLAY';
     statesArr = Object.keys(statesObj);
     randomizeStates();
@@ -330,11 +332,11 @@ function init() {
 
 function render() {
     //Render statesCard
-
+    renderStateCard();
     //Render Score
-
+    scoreEl.textContent = `${currentScore}`;
     //Render Failures Board
-
+    renderFailuresBoard();
     //Render States Board
     renderStateBoard();
 }
@@ -344,6 +346,29 @@ function renderFailuresBoard() {
         failureBadgeEls[i].classList.remove('badge-dark');
         failureBadgeEls[i].classList.add('badge-danger');
     }
+}
+
+function renderStateCard() {
+    //need to render a pEl for state name
+    let stateName = document.createElement('p');
+    stateName.textContent = statesObj[currentState].name;
+    stateCardEl.appendChild(stateName);
+    //display state image
+    let stateImage = document.createElement('img');
+    stateImage.setAttribute('src', `images/states-images/${currentState}.png`);
+    stateCardEl.appendChild(stateImage);
+    //render inputs
+    renderInputs();
+}
+
+function renderInputs() {
+    let numBorderStates = statesObj[currentState].bStates.length;
+    let inputDiv = document.createElement('div');
+    for (i = 0; i < numBorderStates; i++) {
+        let newInput = document.createElement('input');
+        inputDiv.appendChild(newInput);
+    }
+    stateCardEl.appendChild(inputDiv);
 }
 
 function renderStateBoard() {

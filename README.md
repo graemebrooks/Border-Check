@@ -3,7 +3,7 @@
 
 ## Purpose
 
-I've always struggled to visualize the layout of the states in realtion to each other. For the floundering geography student in me, and all others how hope to hone their geospatial craft, Border Check is here to help.
+I've always struggled to visualize the layout of the states in relation to each other. For the floundering geography student in me, and all others how hope to hone their geospatial craft, Border Check is here to help.
 
 ## User Stories
 
