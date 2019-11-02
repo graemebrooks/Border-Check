@@ -69,19 +69,36 @@ main {
   }
 
 .card {
-    width: 35%;
+    width: 300px;
     height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(221, 221, 190);
+}
+
+.cover {
+    background-image: url('');
+    background-image: url(../assets/passportBCCover.png);
 }
 
 /*---------------------------Reset Bar Styles---------------------------*/
 
 #reset-bar {
     display: grid;
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+}
+
+#logo-board {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#corner-logo {
+    height: 100px;
+    width: 100px;
+    padding-right: 20px;
 }
 
 #reset-board {
@@ -95,7 +112,7 @@ main {
 }
 
 img {
-    height: 200px;;
+    height: 200px;
 }
 
 /*---------------------------Misc Styles---------------------------*/

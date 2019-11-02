@@ -231,7 +231,7 @@ const statesObj = {
     SD: {
         name: 'SOUTH DAKOTA',
         id: '39',
-        bStates: [ 'NEBRASKA', 'NORTH DAKOTA', 'WYONMING', 'IOWA', 'MINNESOTA', 'MONTANA'],
+        bStates: [ 'NEBRASKA', 'NORTH DAKOTA', 'WYOMING', 'IOWA', 'MINNESOTA', 'MONTANA'],
         imgFile: '',
     },
     TN: {
@@ -290,6 +290,7 @@ const statesObj = {
     },
 }; 
 
+const maxFailures = 3;
 
 
 /*----- app's state (variables) -----*/
@@ -320,7 +321,7 @@ function init() {
     currentScore = 0;
     numFailures = 0;
     stateCardEl.addEventListener('animationend', function() {
-        stateCardEl.classList.remove('animated', 'bounceInDown');
+        stateCardEl.classList.remove('animated', 'flipInY');
     });
     render();   
 }
@@ -348,17 +349,18 @@ function renderFailuresBoard() {
 }
 
 function renderStateCard() {
+    stateCardEl.classList.remove('cover');
     //need to render a pEl for state name
     let stateName = document.createElement('p');
     stateName.textContent = statesObj[currentState].name;
     stateCardEl.appendChild(stateName);
     //display state image
     let stateImage = document.createElement('img');
-    stateImage.setAttribute('src', `images/states-images/${currentState}.png`);
+    stateImage.setAttribute('src', `assets/states-images/${currentState}.png`);
     stateCardEl.appendChild(stateImage);
     //render inputs
     renderInputs();
-    stateCardEl.classList.add('animated', 'bounceInDown');
+    stateCardEl.classList.add('animated', 'flipInY');
 }
 
 function renderInputs() {
@@ -388,6 +390,7 @@ function handleInput(evt) {
     if (evt.keyCode === 13) {
         verifyInputs();
         renderFailuresBoard();
+        checkForLoss();
     }
 }
 
@@ -411,8 +414,8 @@ function verifyInputs() {
 function checkForTrue(inputArr, currentBStates) {
     inputArr.forEach(function(input) {
         currentBStates.forEach(function(state) {
-            if (input.value === state) {
-                input.classList.add('correct');
+            if (input.value.toUpperCase() === state) {
+                input.classList.add('correct', 'animation', 'bounceIn');
             }
         });
     });
@@ -420,11 +423,15 @@ function checkForTrue(inputArr, currentBStates) {
 
 function checkForFalse(inputArr, currentBStates) {
     inputArr.forEach(function(input) {
-        if (currentBStates.includes(input.value)) {
+        if (currentBStates.includes(input.value.toUpperCase())) {
             return;
         } else if (input.value === '') {
             return;
         } else {
+            input.classList.add('animated', 'shake');
+            input.addEventListener('animationend', function() {
+                stateCardEl.classList.remove('animated', 'shake');
+            });
             numFailures += 1;
         }
     });
@@ -448,5 +455,11 @@ function checkForComplete(inputArr, currentBStates) {
         render();
     } else {
         renderFailuresBoard();
+    }
+}
+
+function checkForLoss() {
+    if (numFailures === maxFailures) {
+
     }
 }
