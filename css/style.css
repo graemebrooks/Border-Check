@@ -73,21 +73,37 @@ main {
     height: 450px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    background-color: rgb(221, 221, 190);
+    background-color: #ece0d7;
+}
+
+.card div {
+    display: flex;
+    flex-direction: column;
+}
+
+.card p {
+    margin-top: 15px;
 }
 
 .cover {
-    background-image: url('');
     background-image: url(../assets/passportBCCover.png);
+}
+
+.game-page {
+    background-image: url(../assets/passportPage.png);
+}
+
+.failure-page {
+    background-image: url(../assets/failurePage.png);
 }
 
 /*---------------------------Reset Bar Styles---------------------------*/
 
 #reset-bar {
     display: grid;
-    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 3fr 2fr;
 }
 
 #logo-board {
@@ -107,12 +123,22 @@ main {
     align-items: center;
 }
 
+#reset-btn {
+    transform: rotate(20deg);
+    width: 120px;
+    height: 75px;
+    font-size: 26px;
+}
+
+
 #stain-board {
     background-color: red;
 }
 
 img {
-    height: 200px;
+    height: 140px;
+    max-width: 200px;
+    margin-bottom: 10px;
 }
 
 /*---------------------------Misc Styles---------------------------*/

@@ -312,6 +312,8 @@ stateCardEl.addEventListener('keydown', handleInput);
 /*----- Functions -----*/
 function init() {
     stateCardEl.innerHTML = '';
+    stateCardEl.classList.remove('failure-page');
+    resetFailures();
     resetBtnEl.textContent = 'PLAY';
     statesArr = Object.keys(statesObj);
     randomizeStates();
@@ -350,6 +352,7 @@ function renderFailuresBoard() {
 
 function renderStateCard() {
     stateCardEl.classList.remove('cover');
+    stateCardEl.classList.add('game-page');
     //need to render a pEl for state name
     let stateName = document.createElement('p');
     stateName.textContent = statesObj[currentState].name;
@@ -460,6 +463,15 @@ function checkForComplete(inputArr, currentBStates) {
 
 function checkForLoss() {
     if (numFailures === maxFailures) {
+        stateCardEl.innerHTML = '';
+        stateCardEl.classList.remove('cover');
+        stateCardEl.classList.add('failure-page');
+    }
+}
 
+function resetFailures() {
+    for (i = 0; i < failureBadgeEls.length; i++) {
+        failureBadgeEls[i].classList.remove('badge-danger');
+        failureBadgeEls[i].classList.add('badge-dark');
     }
 }
