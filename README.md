@@ -14,7 +14,7 @@ I've always struggled to visualize the layout of the states in relation to each 
 
 ## Wireframes
 
-![Main View Wireframe](images/Homepage.png)
+![Main View Wireframe](assets/Homepage.png)
 
 ## Stretch Goals
 
@@ -45,5 +45,5 @@ Data structure is an object defined as 'statesObj' that includes key value pairs
 - HTML & CSS
 - Javascript
 - Bootstrap 4 
-- Google Fonts
+- Animate.CSS library
 - State vectors by [Free Vector Maps](https://freevectormaps.com)

@@ -130,12 +130,18 @@ main {
     font-size: 26px;
 }
 
-
-#stain-board {
-    background-color: red;
+#corner-paper-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
-img {
+#corner-papers {
+    height: 200px;
+    width: 200px;
+}
+
+.card img {
     height: 140px;
     max-width: 200px;
     margin-bottom: 10px;

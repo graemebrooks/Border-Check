@@ -302,6 +302,7 @@ const failureBadgeEls = document.querySelectorAll('div span');
 const resetBtnEl = document.getElementById('reset-btn');
 const stateCardEl = document.querySelector('div.card');
 const scoreEl = document.querySelector('.score-value');
+const player = new Audio();
 
 
 /*----- event listeners -----*/
