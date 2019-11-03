@@ -46,4 +46,8 @@ Data structure is an object defined as 'statesObj' that includes key value pairs
 - Javascript
 - Bootstrap 4 
 - Animate.CSS library
+
+
+## Asset Credits
+
 - State vectors by [Free Vector Maps](https://freevectormaps.com)

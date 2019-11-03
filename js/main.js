@@ -294,7 +294,7 @@ const maxFailures = 3;
 
 
 /*----- app's state (variables) -----*/
-let currentState, statesArr, currentScore, numFailures, cardsCompleted;
+let currentState, statesArr, currentScore, numFailures, cardsCompleted, statesProgressArr;
 
 /*----- cached element references -----*/
 const stateBoardPEls = document.querySelectorAll('td p');
@@ -320,6 +320,8 @@ function init() {
     randomizeStates();
     numInputs = 0;
     currentState = statesArr[0];
+    statesProgressArr = [];
+    statesProgressArr.push(currentState)
     cardsCompleted = 0;
     currentScore = 0;
     numFailures = 0;
@@ -381,7 +383,13 @@ function renderStateBoard() {
     //Update textContent of each p in each td
     for (i = 0; i < stateBoardPEls.length; i++) {
         stateBoardPEls[i].textContent = statesArr[i];
+        stateBoardPEls[i].classList.add('inactive');
     }
+    for (i = 0; i < statesProgressArr.length; i++) {
+        console.log('complete styling')
+        stateBoardPEls[i].className = 'state-complete';
+    }
+    stateBoardPEls[statesProgressArr.length - 1].className = 'active';
 }
 
 /*----- Event Listener Functions -----*/
@@ -455,7 +463,8 @@ function checkForComplete(inputArr, currentBStates) {
         currentState = statesArr[(currentStateIndex + 1)];
         cardsCompleted += 1;
         stateCardEl.classList.add('complete');
-        stateCardEl.innerHTML = '';  
+        stateCardEl.innerHTML = '';
+        statesProgressArr.push(currentState);  
         render();
     } else {
         renderFailuresBoard();

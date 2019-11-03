@@ -58,6 +58,19 @@ td p {
     justify-content: center;
 }
 
+.inactive {
+    color: gray;
+}
+
+.active {
+    font-weight: bold;
+}
+
+.state-complete {
+    color: green;
+    transform: rotate(-25deg);
+}
+
 /*---------------------------Main Styles---------------------------*/
 
 main {
@@ -81,10 +94,17 @@ main {
 .card div {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .card p {
     margin-top: 15px;
+}
+
+.card input {
+    background-color: #ece0d7;
+    border: none;
+    border-bottom: 1px dotted darkgray;
 }
 
 .cover {
