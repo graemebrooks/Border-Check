@@ -107,6 +107,11 @@ main {
     border-bottom: 1px dotted darkgray;
 }
 
+input:focus {
+    outline: none;
+    background-color: #beb5ad;
+}
+
 .cover {
     background-image: url(../assets/passportBCCover.png);
 }

@@ -315,6 +315,7 @@ function init() {
     stateCardEl.innerHTML = '';
     stateCardEl.classList.remove('failure-page');
     resetFailures();
+    resetStateBoard();
     resetBtnEl.textContent = 'PLAY';
     statesArr = Object.keys(statesObj);
     randomizeStates();
@@ -371,11 +372,13 @@ function renderStateCard() {
 
 function renderInputs() {
     let numBorderStates = statesObj[currentState].bStates.length;
+    let correctInputsDiv = document.createElement('div');
     let inputDiv = document.createElement('div');
     for (i = 0; i < numBorderStates; i++) {
         let newInput = document.createElement('input');
         inputDiv.appendChild(newInput);
     }
+    stateCardEl.appendChild(correctInputsDiv);
     stateCardEl.appendChild(inputDiv);
 }
 
@@ -428,6 +431,7 @@ function checkForTrue(inputArr, currentBStates) {
         currentBStates.forEach(function(state) {
             if (input.value.toUpperCase() === state) {
                 input.classList.add('correct', 'animation', 'bounceIn');
+                replaceInput(input);
             }
         });
     });
@@ -484,4 +488,16 @@ function resetFailures() {
         failureBadgeEls[i].classList.remove('badge-danger');
         failureBadgeEls[i].classList.add('badge-dark');
     }
+}
+
+function resetStateBoard() {
+    for (i = 0; i < stateBoardPEls.length; i++) {
+        stateBoardPEls[i].textContent = 'X';
+        stateBoardPEls[i].className = '';
+    }
+}
+
+function replaceInput(input) {
+    input.setAttribute('readonly', 'true');
+    input.style.color = 'green';
 }
