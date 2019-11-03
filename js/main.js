@@ -289,7 +289,13 @@ const statesObj = {
         imgFile: '',
     },
 }; 
-
+const sounds = {
+    pageFlip: 'assets/sounds/pageFlip.wav',
+    wrong: 'assets/sounds/wrong.wav',
+    success: 'assets/sounds/success.wav',
+    correct: 'assets/sounds/correct.wav',
+    lose: 'assets/sounds/lose.wav'
+};
 const maxFailures = 3;
 
 
@@ -368,6 +374,7 @@ function renderStateCard() {
     //render inputs
     renderInputs();
     stateCardEl.classList.add('animated', 'flipInY');
+    playSound('pageFlip');
 }
 
 function renderInputs() {
@@ -409,8 +416,6 @@ function handleInput(evt) {
     }
 }
 
-
-
 /*----- Misc Functions -----*/
 function randomizeStates() {
     statesArr.sort(() => Math.random() - 0.5);
@@ -432,6 +437,7 @@ function checkForTrue(inputArr, currentBStates) {
             if (input.value.toUpperCase() === state) {
                 input.classList.add('correct', 'animation', 'bounceIn');
                 replaceInput(input);
+                playSound('correct');
             }
         });
     });
@@ -446,9 +452,11 @@ function checkForFalse(inputArr, currentBStates) {
         } else {
             input.classList.add('animated', 'shake');
             input.addEventListener('animationend', function() {
-                stateCardEl.classList.remove('animated', 'shake');
+                console.log('resetting...')
+                input   .classList.remove('animated', 'shake');
             });
             numFailures += 1;
+            playSound('wrong');
         }
     });
     return true;
@@ -470,6 +478,7 @@ function checkForComplete(inputArr, currentBStates) {
         stateCardEl.innerHTML = '';
         statesProgressArr.push(currentState);  
         render();
+        playSound('success');
     } else {
         renderFailuresBoard();
     }
@@ -480,6 +489,7 @@ function checkForLoss() {
         stateCardEl.innerHTML = '';
         stateCardEl.classList.remove('cover');
         stateCardEl.classList.add('failure-page');
+        playSound('lose');
     }
 }
 
@@ -501,3 +511,9 @@ function replaceInput(input) {
     input.setAttribute('readonly', 'true');
     input.style.color = 'green';
 }
+
+function playSound(name) {
+    player.src = sounds[name]
+    player.play();
+}
+
