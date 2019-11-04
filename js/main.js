@@ -292,6 +292,7 @@ let currentState, statesArr, currentScore, numFailures, cardsCompleted, statesPr
 /*----- cached element references -----*/
 const stateBoardPEls = document.querySelectorAll('td p');
 const failureBadgeEls = document.querySelectorAll('div span');
+const wrongGuessesEl = document.getElementById('wrong-guesses');
 const textBoxEl = document.getElementById('text-message');
 const resetBtnEl = document.getElementById('reset-btn');
 const stateCardEl = document.querySelector('div.card');
@@ -323,6 +324,8 @@ function init() {
 	currentScore = 0;
 	numFailures = 0;
 	textBoxValue = messages.opening;
+	wrongGuessesEl.className = 'closed';
+	wrongGuessesEl.innerHTML = '';
 	stateCardEl.addEventListener('animationend', function() {
 		stateCardEl.classList.remove('animated', 'flipInY');
 	});
@@ -330,26 +333,19 @@ function init() {
 }
 
 function initSplash() {
-	//run spalsh animations
 	backstoryEl.classList.add('animated', 'fadeInLeft', 'slower');
 	instructionsEl.classList.add('animated', 'fadeInDown', 'slower');
 }
 
 /*----- Render Functions -----*/
 function render() {
-	//Render H1 Message
 	renderTextBox();
-	//Render statesCard
 	if (stateCardEl.classList.contains('complete') || (cardsCompleted === 0 && numInputs === 0)) {
 		renderStateCard();
 	}
-	//Render Score
-	scoreEl.textContent = `${currentScore}`;
-	//Render Failures Board
+	renderScore();
 	renderFailuresBoard();
-	//Render States Board
 	renderStateBoard();
-	//Check for loss
 }
 
 function renderFailuresBoard() {
@@ -360,17 +356,18 @@ function renderFailuresBoard() {
 }
 
 function renderStateCard() {
+	wrongGuessesEl.innerHTML = '';
+	if ((wrongGuessesEl.className = 'open')) {
+		wrongGuessesEl.className = 'closed';
+	}
 	stateCardEl.classList.remove('cover');
 	stateCardEl.classList.add('game-page');
-	//need to render a pEl for state name
 	let stateName = document.createElement('p');
 	stateName.textContent = statesObj[currentState].name;
 	stateCardEl.appendChild(stateName);
-	//display state image
 	let stateImage = document.createElement('img');
 	stateImage.setAttribute('src', `assets/states-images/${currentState}.png`);
 	stateCardEl.appendChild(stateImage);
-	//render inputs
 	renderInputs();
 	stateCardEl.classList.add('animated', 'flipInY');
 	playSound('pageFlip');
@@ -389,7 +386,6 @@ function renderInputs() {
 }
 
 function renderStateBoard() {
-	//Update textContent of each p in each td
 	for (i = 0; i < stateBoardPEls.length; i++) {
 		stateBoardPEls[i].textContent = statesArr[i];
 		stateBoardPEls[i].classList.add('inactive');
@@ -407,6 +403,17 @@ function renderTextBox() {
 	textBoxEl.addEventListener('animationend', function() {
 		textBoxEl.classList.remove('animated', 'bounceInDown');
 	});
+}
+
+function renderScore() {
+	console.log('rendering');
+	scoreEl.textContent = `${currentScore}`;
+	if (currentScore !== 0) {
+		scoreEl.classList.add('animated', 'flash');
+		scoreEl.addEventListener('animationend', function() {
+			scoreEl.classList.remove('animated', 'flash');
+		});
+	}
 }
 
 /*----- Event Listener Functions -----*/
@@ -462,6 +469,7 @@ function checkForFalse(inputArr, currentBStates) {
 			});
 			numFailures += 1;
 			playSound('wrong');
+			appendWrongGuess(input);
 		}
 	});
 	return true;
@@ -494,6 +502,9 @@ function checkForLoss() {
 		stateCardEl.innerHTML = '';
 		stateCardEl.classList.remove('cover');
 		stateCardEl.classList.add('failure-page');
+		textBoxValue = messages.loss;
+		console.log(textBoxValue);
+		renderTextBox();
 		playSound('lose');
 	}
 }
@@ -533,6 +544,18 @@ function generateMessage() {
 			textBoxValue = messages.randomMessage[0];
 		}
 	}
+}
+
+function appendWrongGuess(input) {
+	console.log('opening');
+	wrongGuessesEl.className = 'open';
+	let wrongGuess = document.createElement('p');
+	wrongGuess.textContent = input.value;
+	wrongGuessesEl.appendChild(wrongGuess);
+	wrongGuessesEl.classList.add('animated', 'fadeInRight');
+	wrongGuessesEl.addEventListener('animationend', function() {
+		wrongGuessesEl.classList.remove('animated', 'fadeInRight');
+	});
 }
 
 initSplash();

@@ -135,7 +135,6 @@ main {
 	height: 450px;
 	display: flex;
 	flex-direction: column;
-	/* justify-content: center; */
 	align-items: center;
 	background-color: #ece0d7;
 }
@@ -173,6 +172,28 @@ input:focus {
 	background-image: url(../assets/failurePage.png);
 }
 
+#wrong-guesses {
+	height: 250px;
+	background-color: #f7dfdf;
+	border-left: 1px rgb(240, 202, 202) solid;
+	border-top: 1px rgb(240, 202, 202) solid;
+	border-bottom: 1px rgb(240, 202, 202) solid;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: rgb(160, 24, 24);
+	text-decoration: line-through;
+}
+
+.closed {
+	max-width: 0px;
+	visibility: hidden;
+}
+
+.open {
+	width: 150px;
+}
 /*---------------------------Reset Bar Styles---------------------------*/
 
 #reset-bar {
