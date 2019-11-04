@@ -12,212 +12,243 @@
     <script defer src="js/main.js"></script> 
 </head>
 <body>
-    <aside>
-        <div id="score-board">
-            <p class="score-value">0</p>
+    <div id="splash">
+        <div id="backstory">
+            <p>
+                The year is 2124. After decades of sectarian violence, a tyrannical regime hell-bent on enforcing high standards
+                of geographical eduction has consolidated power. Under its rule citizens are subject to on-the-spot geography 
+                questionnaires known as "Border Checks." Those who resist become prisoners of the state, those who fail 
+                are never heard from again.
+            </p>
+            <p>
+                Rack your brain or be sent to the gulags in round after round of exhilerating Border Check! 
+            </p>
         </div>
-        <div id="failure-board">
-            <div id="failures-text">
-                <p>Failures:</p>
+        <div id="instructions-right">
+            <div id="instructions">
+                <h1>
+                    Instructions:
+                </h1>
+                <p>
+                    1) Press play to begin. <br>
+                    2) Correctly input the bordering states of the displayed state followed by pressing "enter." <br>
+                    3) Strive to reach your highest total before three failures, when you'll be escorted to the nearest
+                    detention facility! <br>
+                    4) Current score, number of failures, and states completed are displayed to the left. <br>
+                    5) Scroll down to begin, but do so at your own peril.
+                </p>
             </div>
-            <div id="failures-badges">
-                <span class="badge badge-pill badge-dark">FAILURE</span>
-                <span class="badge badge-pill badge-dark">FAILURE</span>
-                <span class="badge badge-pill badge-dark ">FAILURE</span>   
-            </div>
-        </div>
-        <div id="state-board">
-            <table id="states-table">
-                <tr>
-                    <td>
-                        <p id="1">X</p>
-                    </td>
-                    <td>
-                        <p id="2">X</p>
-                    </td>
-                    <td>
-                        <p id="3">X</p>
-                    </td>
-                    <td>
-                        <p id="4">X</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p id="5">X</p>
-                    </td>
-                    <td>
-                        <p id="6">X</p>
-                    </td>
-                    <td>
-                        <p id="7">X</p>
-                    </td>
-                    <td>
-                        <p id="8">X</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p id="9">X</p>
-                    </td>
-                    <td>
-                        <p id="10">X</p>
-                    </td>
-                    <td>
-                        <p id="11">X</p>
-                    </td>
-                    <td>
-                        <p id="12">X</p>
-                    </td>    
-                </tr>
-                <tr>
-                    <td>
-                        <p id="13">X</p>
-                    </td>
-                    <td>
-                        <p id="14">X</p>
-                    </td>
-                    <td>
-                        <p id="15">X</p>
-                    </td>
-                    <td>
-                        <p id="16">X</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p id="17">X</p>
-                    </td>
-                    <td>
-                        <p id="18">X</p>
-                    </td>
-                    <td>
-                        <p id="19">X</p>
-                    </td>
-                    <td>
-                        <p id="20">X</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p id="21">X</p>    
-                    </td>
-                    <td>
-                        <p id="22">X</p>
-                    </td>
-                    <td>
-                        <p id="23">X</p>
-                    </td>
-                    <td>
-                        <p id="24">X</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p id="25">X</p>
-                    </td>
-                    <td>
-                        <p id="26">X</p>
-                    </td>
-                    <td>
-                        <p id="27">X</p>
-                    </td>
-                    <td>
-                        <p id="28">X</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p id="29">X</p>
-                    </td>
-                    <td>
-                        <p id="30">X</p>
-                    </td>
-                    <td>
-                        <p id="31">X</p>
-                    </td>
-                    <td>
-                        <p id="32">X</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p id="33">X</p>
-                    </td>
-                    <td>
-                        <p id="34">X</p>
-                    </td>
-                    <td>
-                        <p id="35">X</p>
-                    </td>
-                    <td>
-                        <p id="36">X</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p id="37">X</p>
-                    </td>
-                    <td>
-                        <p id="38">X</p>
-                    </td>
-                    <td>
-                        <p id="39">X</p>
-                    </td>
-                    <td>
-                        <p id="40">X</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p id="41">X</p>
-                    </td>
-                    <td>
-                        <p id="42">X</p>
-                    </td>
-                    <td>
-                        <p id="43">X</p>
-                    </td>
-                    <td>
-                        <p id="44">X</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p id="45">X</p>
-                    </td>
-                    <td>
-                        <p id="46">X</p>
-                    </td>
-                    <td>
-                        <p id="47">X</p>
-                    </td>
-                    <td>
-                        <p id="48">X</p>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </aside>
-    <main>
-        <div id="text-box">
-            <p>YOU THERE! BORDER CHECK.</p>
-        </div>
-        <div id="card-container">
-            <div class="card cover">
-            </div>
-        </div>
-    </main>
-    <div id="reset-bar">
-        <div id="logo-board">
-            <img src="assets/bclogo.png" alt="logo" id="corner-logo">
-        </div>
-        <div id="reset-board">  
-            <button type="button" class="btn btn-outline-success" id="reset-btn">PLAY</button>
-        </div>
-        <div id="corner-paper-board">
-            <img src="assets/cornerPapers.png" alt="" id="corner-papers">
         </div>
     </div>
+    <div id="game-board">
+            <aside>
+                    <div id="score-board">
+                        <p class="score-value">0</p>
+                    </div>
+                    <div id="failure-board">
+                        <div id="failures-text">
+                            <p>Failures:</p>
+                        </div>
+                        <div id="failures-badges">
+                            <span class="badge badge-pill badge-dark">FAILURE</span>
+                            <span class="badge badge-pill badge-dark">FAILURE</span>
+                            <span class="badge badge-pill badge-dark ">FAILURE</span>   
+                        </div>
+                    </div>
+                    <div id="state-board">
+                        <table id="states-table">
+                            <tr>
+                                <td>
+                                    <p id="1">X</p>
+                                </td>
+                                <td>
+                                    <p id="2">X</p>
+                                </td>
+                                <td>
+                                    <p id="3">X</p>
+                                </td>
+                                <td>
+                                    <p id="4">X</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p id="5">X</p>
+                                </td>
+                                <td>
+                                    <p id="6">X</p>
+                                </td>
+                                <td>
+                                    <p id="7">X</p>
+                                </td>
+                                <td>
+                                    <p id="8">X</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p id="9">X</p>
+                                </td>
+                                <td>
+                                    <p id="10">X</p>
+                                </td>
+                                <td>
+                                    <p id="11">X</p>
+                                </td>
+                                <td>
+                                    <p id="12">X</p>
+                                </td>    
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p id="13">X</p>
+                                </td>
+                                <td>
+                                    <p id="14">X</p>
+                                </td>
+                                <td>
+                                    <p id="15">X</p>
+                                </td>
+                                <td>
+                                    <p id="16">X</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p id="17">X</p>
+                                </td>
+                                <td>
+                                    <p id="18">X</p>
+                                </td>
+                                <td>
+                                    <p id="19">X</p>
+                                </td>
+                                <td>
+                                    <p id="20">X</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p id="21">X</p>    
+                                </td>
+                                <td>
+                                    <p id="22">X</p>
+                                </td>
+                                <td>
+                                    <p id="23">X</p>
+                                </td>
+                                <td>
+                                    <p id="24">X</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p id="25">X</p>
+                                </td>
+                                <td>
+                                    <p id="26">X</p>
+                                </td>
+                                <td>
+                                    <p id="27">X</p>
+                                </td>
+                                <td>
+                                    <p id="28">X</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p id="29">X</p>
+                                </td>
+                                <td>
+                                    <p id="30">X</p>
+                                </td>
+                                <td>
+                                    <p id="31">X</p>
+                                </td>
+                                <td>
+                                    <p id="32">X</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p id="33">X</p>
+                                </td>
+                                <td>
+                                    <p id="34">X</p>
+                                </td>
+                                <td>
+                                    <p id="35">X</p>
+                                </td>
+                                <td>
+                                    <p id="36">X</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p id="37">X</p>
+                                </td>
+                                <td>
+                                    <p id="38">X</p>
+                                </td>
+                                <td>
+                                    <p id="39">X</p>
+                                </td>
+                                <td>
+                                    <p id="40">X</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p id="41">X</p>
+                                </td>
+                                <td>
+                                    <p id="42">X</p>
+                                </td>
+                                <td>
+                                    <p id="43">X</p>
+                                </td>
+                                <td>
+                                    <p id="44">X</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p id="45">X</p>
+                                </td>
+                                <td>
+                                    <p id="46">X</p>
+                                </td>
+                                <td>
+                                    <p id="47">X</p>
+                                </td>
+                                <td>
+                                    <p id="48">X</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </aside>
+                <main>
+                    <div id="text-box">
+                        <p>YOU THERE! BORDER CHECK.</p>
+                    </div>
+                    <div id="card-container">
+                        <div class="card cover">
+                        </div>
+                    </div>
+                </main>
+                <div id="reset-bar">
+                    <div id="logo-board">
+                        <img src="assets/bclogo.png" alt="logo" id="corner-logo">
+                    </div>
+                    <div id="reset-board">  
+                        <button type="button" class="btn btn-outline-success" id="reset-btn">PLAY</button>
+                    </div>
+                    <div id="corner-paper-board">
+                        <img src="assets/cornerPapers.png" alt="" id="corner-papers">
+                    </div>
+                </div> 
+    </div>
+    
 </body>
 </html>

@@ -141,7 +141,7 @@ const statesObj = {
 	MT: {
 		name: 'MONTANA',
 		id: '24',
-		bStates: [ 'SOUTH DAKOTA', 'WYOMONG', 'IDAHO', 'NORTH DAKOTA' ],
+		bStates: [ 'SOUTH DAKOTA', 'WYOMING', 'IDAHO', 'NORTH DAKOTA' ],
 		imgFile: ''
 	},
 	NE: {
@@ -318,6 +318,10 @@ const stateCardEl = document.querySelector('div.card');
 const scoreEl = document.querySelector('.score-value');
 const player = new Audio();
 
+const backstoryEl = document.getElementById('backstory');
+const instructionsEl = document.getElementById('instructions');
+const startEl = document.getElementById('start');
+
 /*----- event listeners -----*/
 resetBtnEl.addEventListener('click', handleResetBtn);
 stateCardEl.addEventListener('keydown', handleInput);
@@ -342,6 +346,13 @@ function init() {
 		stateCardEl.classList.remove('animated', 'flipInY');
 	});
 	render();
+}
+
+function initSplash() {
+	//run spalsh animations
+	backstoryEl.classList.add('animated', 'fadeInLeft', 'slower');
+    instructionsEl.classList.add('animated', 'fadeInDown', 'slower');
+    startEl.classList.add('animated', 'fadeInRight', 'slower');
 }
 
 /*----- Render Functions -----*/
@@ -521,3 +532,5 @@ function playSound(name) {
 	player.src = sounds[name];
 	player.play();
 }
+
+initSplash();
