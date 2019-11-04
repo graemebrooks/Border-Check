@@ -75,11 +75,25 @@ td p {
 
 main {
     color: #131313;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    /* flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+  }
+
+#text-box {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
+
+
+#card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .card {
     width: 300px;
