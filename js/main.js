@@ -3,236 +3,197 @@ const statesObj = {
 	AL: {
 		name: 'ALABAMA',
 		id: '1',
-		bStates: [ 'FLORIDA', 'GEORGIA', 'MISSISSIPPI', 'TENNESSEE' ],
-		imgFile: ''
+		bStates: [ 'FLORIDA', 'GEORGIA', 'MISSISSIPPI', 'TENNESSEE' ]
 	},
 	AZ: {
 		name: 'ARIZONA',
 		id: '2',
-		bStates: [ 'CALIFORNIA', 'COLORADO', 'NEVADA', 'NEW MEXICO', 'UTAH' ],
-		imgFile: ''
+		bStates: [ 'CALIFORNIA', 'COLORADO', 'NEVADA', 'NEW MEXICO', 'UTAH' ]
 	},
 	AR: {
 		name: 'ARKANSAS',
 		id: '3',
-		bStates: [ 'OKLAHOMA', 'TENNESSEE', 'TEXAS', 'LOUISIANA', 'MISSISSIPPI', 'MISSOURI' ],
-		imgFile: ''
+		bStates: [ 'OKLAHOMA', 'TENNESSEE', 'TEXAS', 'LOUISIANA', 'MISSISSIPPI', 'MISSOURI' ]
 	},
 	CA: {
 		name: 'CALIFORNIA',
 		id: '4',
-		bStates: [ 'ARIZONA', 'NEVADA', 'OREGON' ],
-		imgFile: ''
+		bStates: [ 'ARIZONA', 'NEVADA', 'OREGON' ]
 	},
 	CO: {
 		name: 'COLORADO',
 		id: '5',
-		bStates: [ 'ARIZONA', 'NEW MEXICO', 'OKLAHOMA', 'UTAH', 'WYOMING', 'KANSAS', 'NEBRASKA' ],
-		imgFile: ''
+		bStates: [ 'ARIZONA', 'NEW MEXICO', 'OKLAHOMA', 'UTAH', 'WYOMING', 'KANSAS', 'NEBRASKA' ]
 	},
 	CT: {
 		name: 'CONNECTICUT',
 		id: '6',
-		bStates: [ 'NEW YORK', 'RHODE ISLAND', 'MASSACHUSETTS' ],
-		imgFile: ''
+		bStates: [ 'NEW YORK', 'RHODE ISLAND', 'MASSACHUSETTS' ]
 	},
 	DE: {
 		name: 'DELAWARE',
 		id: '7',
-		bStates: [ 'NEW JERSEY', 'PENNSYLVANIA', 'MARYLAND' ],
-		imgFile: ''
+		bStates: [ 'NEW JERSEY', 'PENNSYLVANIA', 'MARYLAND' ]
 	},
 	FL: {
 		name: 'FLORIDA',
 		id: '8',
-		bStates: [ 'GEORGIA', 'ALABAMA' ],
-		imgFile: ''
+		bStates: [ 'GEORGIA', 'ALABAMA' ]
 	},
 	GA: {
 		name: 'GEORGIA',
 		id: '9',
-		bStates: [ 'NORTH CAROLINA', 'SOUTH CAROLINA', 'TENNESSEE', 'ALABAMA', 'FLORIDA' ],
-		imgFile: ''
+		bStates: [ 'NORTH CAROLINA', 'SOUTH CAROLINA', 'TENNESSEE', 'ALABAMA', 'FLORIDA' ]
 	},
 	ID: {
 		name: 'IDAHO',
 		id: '10',
-		bStates: [ 'UTAH', 'WASHINGTON', 'WYOMING', 'MONTANA', 'NEVADA', 'OREGON' ],
-		imgFile: ''
+		bStates: [ 'UTAH', 'WASHINGTON', 'WYOMING', 'MONTANA', 'NEVADA', 'OREGON' ]
 	},
 	IL: {
 		name: 'ILLINOIS',
 		id: '11',
-		bStates: [ 'KENTUCKY', 'MISSOURI', 'WISCONSIN', 'INDIANA', 'IOWA', 'MICHIGAN' ],
-		imgFile: ''
+		bStates: [ 'KENTUCKY', 'MISSOURI', 'WISCONSIN', 'INDIANA', 'IOWA', 'MICHIGAN' ]
 	},
 	IN: {
 		name: 'INDIANA',
 		id: '12',
-		bStates: [ 'MICHIGAN', 'OHIO', 'ILLINOIS', 'KENTUCKY', 'IOWA' ],
-		imgFile: ''
+		bStates: [ 'MICHIGAN', 'OHIO', 'ILLINOIS', 'KENTUCKY', 'IOWA' ]
 	},
 	IA: {
 		name: 'IOWA',
 		id: '13',
-		bStates: [ 'NEBRASKA', 'SOUTH DAKOTA', 'WISCONSIN', 'ILLINOIS', 'MINNESOTA', 'MISSOURI' ],
-		imgFile: ''
+		bStates: [ 'NEBRASKA', 'SOUTH DAKOTA', 'WISCONSIN', 'ILLINOIS', 'MINNESOTA', 'MISSOURI' ]
 	},
 	KS: {
 		name: 'KANSAS',
 		id: '14',
-		bStates: [ 'NEBRASKA', 'OKLAHOMA', 'COLORADO', 'MISSOURI' ],
-		imgFile: ''
+		bStates: [ 'NEBRASKA', 'OKLAHOMA', 'COLORADO', 'MISSOURI' ]
 	},
 	KY: {
 		name: 'KENTUCKY',
 		id: '15',
-		bStates: [ 'TENNESSEE', 'VIRGINIA', 'WEST VIRGINIA', 'ILLINOIS', 'INDIANA', 'MISSOURI', 'OHIO' ],
-		imgFile: ''
+		bStates: [ 'TENNESSEE', 'VIRGINIA', 'WEST VIRGINIA', 'ILLINOIS', 'INDIANA', 'MISSOURI', 'OHIO' ]
 	},
 	LA: {
 		name: 'LOUISIANA',
 		id: '16',
-		bStates: [ 'TEXAS', 'ARKANSAS', 'MISSISSIPPI' ],
-		imgFile: ''
+		bStates: [ 'TEXAS', 'ARKANSAS', 'MISSISSIPPI' ]
 	},
 	ME: {
 		name: 'MAINE',
 		id: '17',
-		bStates: [ 'NEW HAMPSHIRE' ],
-		imgFile: ''
+		bStates: [ 'NEW HAMPSHIRE' ]
 	},
 	MD: {
 		name: 'MARYLAND',
 		id: '18',
-		bStates: [ 'VIRGINIA', 'WEST VIRGINIA', 'DELAWARE', 'PENNSYLVANNIA' ],
-		imgFile: ''
+		bStates: [ 'VIRGINIA', 'WEST VIRGINIA', 'DELAWARE', 'PENNSYLVANNIA' ]
 	},
 	MA: {
 		name: 'MASSACHUSETTS',
 		id: '19',
-		bStates: [ 'NEW YORK', 'RHODE ISLAND', 'VERMONT', 'CONNECTICUT', 'NEW HAMPSHIRE' ],
-		imgFile: ''
+		bStates: [ 'NEW YORK', 'RHODE ISLAND', 'VERMONT', 'CONNECTICUT', 'NEW HAMPSHIRE' ]
 	},
 	MI: {
 		name: 'MICHIGAN',
 		id: '20',
-		bStates: [ 'OHIO', 'WISCONSIN', 'ILLINOIS', 'INDIANA' ],
-		imgFile: ''
+		bStates: [ 'OHIO', 'WISCONSIN', 'ILLINOIS', 'INDIANA' ]
 	},
 	MN: {
 		name: 'MINNESOTA',
 		id: '21',
-		bStates: [ 'NORTH DAKOTA', 'SOUTH DAKOTA', 'WISCONSIN', 'IOWA' ],
-		imgFile: ''
+		bStates: [ 'NORTH DAKOTA', 'SOUTH DAKOTA', 'WISCONSIN', 'IOWA' ]
 	},
 	MS: {
 		name: 'MISSISSIPPI',
 		id: '22',
-		bStates: [ 'LOUISIANA', 'TENNESSEE', 'ALABAMA', 'ARKANSAS' ],
-		imgFile: ''
+		bStates: [ 'LOUISIANA', 'TENNESSEE', 'ALABAMA', 'ARKANSAS' ]
 	},
 	MO: {
 		name: 'MISSOURI',
 		id: '23',
-		bStates: [ 'NEBRASKA', 'OKLAHOMA', 'TENNESSEE', 'ARKANSAS', 'ILLINOIS', 'IOWA', 'KANSAS', 'KENTUCKY' ],
-		imgFile: ''
+		bStates: [ 'NEBRASKA', 'OKLAHOMA', 'TENNESSEE', 'ARKANSAS', 'ILLINOIS', 'IOWA', 'KANSAS', 'KENTUCKY' ]
 	},
 	MT: {
 		name: 'MONTANA',
 		id: '24',
-		bStates: [ 'SOUTH DAKOTA', 'WYOMING', 'IDAHO', 'NORTH DAKOTA' ],
-		imgFile: ''
+		bStates: [ 'SOUTH DAKOTA', 'WYOMING', 'IDAHO', 'NORTH DAKOTA' ]
 	},
 	NE: {
 		name: 'NEBRASKA',
 		id: '25',
-		bStates: [ 'MISSOURI', 'SOUTH DAKOTA', 'WYOMING', 'COLORADO', 'IOWA', 'KANSAS' ],
-		imgFile: ''
+		bStates: [ 'MISSOURI', 'SOUTH DAKOTA', 'WYOMING', 'COLORADO', 'IOWA', 'KANSAS' ]
 	},
 	NV: {
 		name: 'NEVADA',
 		id: '26',
-		bStates: [ 'IDAHO', 'OREGON', 'UTAH', 'ARIZONA', 'CALIFORNIA' ],
-		imgFile: ''
+		bStates: [ 'IDAHO', 'OREGON', 'UTAH', 'ARIZONA', 'CALIFORNIA' ]
 	},
 	NH: {
 		name: 'NEW HAMPSHIRE',
 		id: '27',
-		bStates: [ 'VERMONT', 'MASSACHUSETTS', 'MAINE' ],
-		imgFile: ''
+		bStates: [ 'VERMONT', 'MASSACHUSETTS', 'MAINE' ]
 	},
 	NJ: {
 		name: 'NEW JERSEY',
 		id: '28',
-		bStates: [ 'PENNSYLVANIA', 'DELAWARE', 'NEW YORK' ],
-		imgFile: ''
+		bStates: [ 'PENNSYLVANIA', 'DELAWARE', 'NEW YORK' ]
 	},
 	NM: {
 		name: 'NEW MEXICO',
 		id: '29',
-		bStates: [ 'OKLAHOMA', 'TEXAS', 'UTAH', 'ARIZONA', 'COLORADO' ],
-		imgFile: ''
+		bStates: [ 'OKLAHOMA', 'TEXAS', 'UTAH', 'ARIZONA', 'COLORADO' ]
 	},
 	NY: {
 		name: 'NEW YORK',
 		id: '30',
-		bStates: [ 'PENNSYLVANIA', 'VERMONT', 'CONNECTICUT', 'MASSACHUSETTS', 'NEW JERSEY' ],
-		imgFile: ''
+		bStates: [ 'PENNSYLVANIA', 'VERMONT', 'CONNECTICUT', 'MASSACHUSETTS', 'NEW JERSEY' ]
 	},
 	NC: {
 		name: 'NORTH CAROLINA',
 		id: '31',
-		bStates: [ 'TENNESSEE', 'VIRGINIA', 'GEORGIA', 'SOUTH CAROLINA' ],
-		imgFile: ''
+		bStates: [ 'TENNESSEE', 'VIRGINIA', 'GEORGIA', 'SOUTH CAROLINA' ]
 	},
 	ND: {
 		name: 'NORTH DAKOTA',
 		id: '32',
-		bStates: [ 'SOUTH DAKOTA', 'MINNESOTA', 'MONTANA' ],
-		imgFile: ''
+		bStates: [ 'SOUTH DAKOTA', 'MINNESOTA', 'MONTANA' ]
 	},
 	OH: {
 		name: 'OHIO',
 		id: '33',
-		bStates: [ 'MICHIGAN', 'PENNSYLVANIA', 'WEST VIRGINIA', 'INDIANA', 'KENTUCKY' ],
-		imgFile: ''
+		bStates: [ 'MICHIGAN', 'PENNSYLVANIA', 'WEST VIRGINIA', 'INDIANA', 'KENTUCKY' ]
 	},
 	OK: {
 		name: 'OKLAHOMA',
 		id: '34',
-		bStates: [ 'MISSOURI', 'NEW MEXICO', 'TEXAS', 'ARKANSAS', 'COLORADO', 'KANSAS' ],
-		imgFile: ''
+		bStates: [ 'MISSOURI', 'NEW MEXICO', 'TEXAS', 'ARKANSAS', 'COLORADO', 'KANSAS' ]
 	},
 	OR: {
 		name: 'OREGON',
 		id: '35',
-		bStates: [ 'NEVADA', 'WASHINGTON', 'CALIFORNIA', 'IDAHO' ],
-		imgFile: ''
+		bStates: [ 'NEVADA', 'WASHINGTON', 'CALIFORNIA', 'IDAHO' ]
 	},
 	PA: {
 		name: 'PENNSYLVANIA',
 		id: '36',
-		bStates: [ 'NEW YORK', 'OHIO', 'WEST VIRGINIA', 'DELAWARE', 'MARYLAND', 'NEW JERSEY' ],
-		imgFile: ''
+		bStates: [ 'NEW YORK', 'OHIO', 'WEST VIRGINIA', 'DELAWARE', 'MARYLAND', 'NEW JERSEY' ]
 	},
 	RI: {
 		name: 'RHODE ISLAND',
 		id: '37',
-		bStates: [ 'MASSACHUSETTS', 'CONNECTICUT' ],
-		imgFile: ''
+		bStates: [ 'MASSACHUSETTS', 'CONNECTICUT' ]
 	},
 	SC: {
 		name: 'SOUTH CAROLINA',
 		id: '38',
-		bStates: [ 'NORTH CAROLINA', 'GEORGIA' ],
-		imgFile: ''
+		bStates: [ 'NORTH CAROLINA', 'GEORGIA' ]
 	},
 	SD: {
 		name: 'SOUTH DAKOTA',
 		id: '39',
-		bStates: [ 'NEBRASKA', 'NORTH DAKOTA', 'WYOMING', 'IOWA', 'MINNESOTA', 'MONTANA' ],
-		imgFile: ''
+		bStates: [ 'NEBRASKA', 'NORTH DAKOTA', 'WYOMING', 'IOWA', 'MINNESOTA', 'MONTANA' ]
 	},
 	TN: {
 		name: 'TENNESSEE',
@@ -246,56 +207,47 @@ const statesObj = {
 			'ARKANSAS',
 			'GEORGIA',
 			'KENTUCKY'
-		],
-		imgFile: ''
+		]
 	},
 	TX: {
 		name: 'TEXAS',
 		id: '41',
-		bStates: [ 'NEW MEXICO', 'OKLAHOMA', 'ARKANSAS', 'LOUISIANA' ],
-		imgFile: ''
+		bStates: [ 'NEW MEXICO', 'OKLAHOMA', 'ARKANSAS', 'LOUISIANA' ]
 	},
 	UT: {
 		name: 'UTAH',
 		id: '42',
-		bStates: [ 'NEVADA', 'NEW MEXICO', 'WYOMING', 'ARIZONA', 'COLORADO', 'IDAHO' ],
-		imgFile: ''
+		bStates: [ 'NEVADA', 'NEW MEXICO', 'WYOMING', 'ARIZONA', 'COLORADO', 'IDAHO' ]
 	},
 	VT: {
 		name: 'VERMONT',
 		id: '43',
-		bStates: [ 'NEW HAMPSHIRE', 'NEW YORK', 'MASSACHUSETTS' ],
-		imgFile: ''
+		bStates: [ 'NEW HAMPSHIRE', 'NEW YORK', 'MASSACHUSETTS' ]
 	},
 	VA: {
 		name: 'VIRGINIA',
 		id: '44',
-		bStates: [ 'NORTH CAROLINA', 'TENNESSEE', 'WEST VIRGINIA', 'KENTUCKY', 'MARYLAND' ],
-		imgFile: ''
+		bStates: [ 'NORTH CAROLINA', 'TENNESSEE', 'WEST VIRGINIA', 'KENTUCKY', 'MARYLAND' ]
 	},
 	WA: {
 		name: 'WASHINGTON',
 		id: '45',
-		bStates: [ 'OREGON', 'IDAHO' ],
-		imgFile: ''
+		bStates: [ 'OREGON', 'IDAHO' ]
 	},
 	WV: {
 		name: 'WEST VIRGINIA',
 		id: '46',
-		bStates: [ 'PENNSYLVANIA', 'VIRGINIA', 'KENTUCKY', 'MARYLAND', 'OHIO' ],
-		imgFile: ''
+		bStates: [ 'PENNSYLVANIA', 'VIRGINIA', 'KENTUCKY', 'MARYLAND', 'OHIO' ]
 	},
 	WI: {
 		name: 'WISCONSIN',
 		id: '47',
-		bStates: [ 'MICHIGAN', 'MINNESOTA', 'ILLINOIS', 'IOWA' ],
-		imgFile: ''
+		bStates: [ 'MICHIGAN', 'MINNESOTA', 'ILLINOIS', 'IOWA' ]
 	},
 	WY: {
 		name: 'WYOMING',
 		id: '48',
-		bStates: [ 'NEBRASKA', 'SOUTH DAKOTA', 'UTAH', 'COLORADO', 'IDAHO', 'MONTANA' ],
-		imgFile: ''
+		bStates: [ 'NEBRASKA', 'SOUTH DAKOTA', 'UTAH', 'COLORADO', 'IDAHO', 'MONTANA' ]
 	}
 };
 
@@ -331,6 +283,7 @@ const sounds = {
 	correct: 'assets/sounds/correct.wav',
 	lose: 'assets/sounds/lose.wav'
 };
+
 const maxFailures = 3;
 
 /*----- app's state (variables) -----*/

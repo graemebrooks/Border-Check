@@ -1,5 +1,15 @@
 # Border Check
 
+## Game
+
+The year is 2124. After decades of sectarian violence, a tyrannical regime hell-bent on enforcing high standards
+of geographical eduction has consolidated power. Under its rule citizens are subject to on-the-spot geography 
+questionnaires known as "Border Checks." Those who resist become prisoners of the state, those who fail 
+are never heard from again.
+
+Rack your brain or be sent to the gulags in round after round of exhilerating Border Check!
+
+![Game Example](assets/exampleView.png)
 
 ## Purpose
 
@@ -20,7 +30,7 @@ I've always struggled to visualize the layout of the states in relation to each 
 
 1) Add instructions section
 2) Make mobile responsive
-3) Add variable difficulty
+3) Add variable messages for each state
 4) Add Hints
 
 ## Data Structure
@@ -34,7 +44,6 @@ Data structure is an object defined as 'statesObj' that includes key value pairs
         name: 'TEXAS',
         id: '41',
         bStates: [ 'NEW MEXICO', 'OKLAHOMA', 'ARKANSAS', 'LOUISIANA'],
-        imgFile: '',
     },
     ...
 }
@@ -51,3 +60,4 @@ Data structure is an object defined as 'statesObj' that includes key value pairs
 ## Asset Credits
 
 - State vectors by [Free Vector Maps](https://freevectormaps.com)
+- Sounds from [Freesound](https://freesound.org/)
