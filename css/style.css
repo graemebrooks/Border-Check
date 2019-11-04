@@ -115,15 +115,13 @@ main {
 	color: #131313;
 	display: grid;
 	grid-template-rows: 100px 1fr;
-	/* flex-direction: column;
-    justify-content: center;
-    align-items: center; */
 }
 
 #text-box {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 }
 
 #card-container {

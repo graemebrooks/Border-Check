@@ -298,6 +298,32 @@ const statesObj = {
 		imgFile: ''
 	}
 };
+
+const messages = {
+	stateSpecific: {
+		TX: 'HOME OF OUR BELOVED GEOGRAPHIC REEDUCATION CAMPS. YEEHAW!',
+		CA: 'AH CALIFORNIA, HOME TO PRECISELY 841.445 MILES OF SUNSOAKED SHORELINE.',
+		NY: 'HOME OF OUR BELOVED CAPITAL, NEW GEOLOPOLIS. SHAME ABOUT OLD GEOLOPOLIS.',
+		FL: 'DISNEYWORLD IS NOT A STATE SANCTIONED GEOGRAPHIC ENTITY AND SHOULD NOT BE TREATED AS SUCH.',
+		NV: 'GAMBLING ON THE RESULTS OF PERIODIC UPRISINGS IS STRICTLY FORBIDDEN.',
+		GA: 'A SHAME ABOUT THE PEACH RIOTS.',
+		WY: "EVEN I CAN'T THINK OF SOMETHING RELEVANT TO SAY.",
+		MN: 'SOME OF THE FINEST GULAGS. OH YEAH YOU BETCHA.'
+	},
+	randomMessage: [
+		'SIT UP STRAIGHT!',
+		'I HOPE YOU ENJOY THE COLD.',
+		'DO YOU EVEN OWN AN ATLAS?',
+		'FOUR LEGS GOOD, TWO LEGS AND A GLOBE BETTER.',
+		"IF YOU HIDE YOUR IGNORANCE, NO ONE WILL HIT YOU AND YOU'LL NEVER LEARN.",
+		'WHO CONTROLS THE BORDERS CONTROLS THE MAPS. WHO CONTROLS THE MAPS CONTROLS THE BORDERS.',
+		"IF ONE'S DIFFERENT, ONE'S BOUND TO BE THROWN IN A REEDUCATION CAMP.",
+		'I HAVE THIS DISEASE LATE AT NIGHT SOMETIMES, INVOLVING ALCOHOL AND A GPS.'
+	],
+	opening: 'YOU THERE! BORDER CHECK.',
+	loss: 'A DISGRACE TO THE STATE. TAKE THEM AWAY!'
+};
+
 const sounds = {
 	pageFlip: 'assets/sounds/pageFlip.wav',
 	wrong: 'assets/sounds/wrong.wav',
@@ -308,11 +334,12 @@ const sounds = {
 const maxFailures = 3;
 
 /*----- app's state (variables) -----*/
-let currentState, statesArr, currentScore, numFailures, cardsCompleted, statesProgressArr;
+let currentState, statesArr, currentScore, numFailures, cardsCompleted, statesProgressArr, textBoxValue;
 
 /*----- cached element references -----*/
 const stateBoardPEls = document.querySelectorAll('td p');
 const failureBadgeEls = document.querySelectorAll('div span');
+const textBoxEl = document.getElementById('text-message');
 const resetBtnEl = document.getElementById('reset-btn');
 const stateCardEl = document.querySelector('div.card');
 const scoreEl = document.querySelector('.score-value');
@@ -342,6 +369,7 @@ function init() {
 	cardsCompleted = 0;
 	currentScore = 0;
 	numFailures = 0;
+	textBoxValue = messages.opening;
 	stateCardEl.addEventListener('animationend', function() {
 		stateCardEl.classList.remove('animated', 'flipInY');
 	});
@@ -351,12 +379,13 @@ function init() {
 function initSplash() {
 	//run spalsh animations
 	backstoryEl.classList.add('animated', 'fadeInLeft', 'slower');
-    instructionsEl.classList.add('animated', 'fadeInDown', 'slower');
-    startEl.classList.add('animated', 'fadeInRight', 'slower');
+	instructionsEl.classList.add('animated', 'fadeInDown', 'slower');
 }
 
 /*----- Render Functions -----*/
 function render() {
+	//Render H1 Message
+	renderTextBox();
 	//Render statesCard
 	if (stateCardEl.classList.contains('complete') || (cardsCompleted === 0 && numInputs === 0)) {
 		renderStateCard();
@@ -413,10 +442,18 @@ function renderStateBoard() {
 		stateBoardPEls[i].classList.add('inactive');
 	}
 	for (i = 0; i < statesProgressArr.length; i++) {
-		console.log('complete styling');
 		stateBoardPEls[i].className = 'state-complete';
 	}
 	stateBoardPEls[statesProgressArr.length - 1].className = 'active';
+}
+
+function renderTextBox() {
+	generateMessage();
+	textBoxEl.textContent = textBoxValue;
+	textBoxEl.classList.add('animated', 'bounceInDown');
+	textBoxEl.addEventListener('animationend', function() {
+		textBoxEl.classList.remove('animated', 'bounceInDown');
+	});
 }
 
 /*----- Event Listener Functions -----*/
@@ -468,7 +505,6 @@ function checkForFalse(inputArr, currentBStates) {
 		} else {
 			input.classList.add('animated', 'shake');
 			input.addEventListener('animationend', function() {
-				console.log('resetting...');
 				input.classList.remove('animated', 'shake');
 			});
 			numFailures += 1;
@@ -531,6 +567,19 @@ function replaceInput(input) {
 function playSound(name) {
 	player.src = sounds[name];
 	player.play();
+}
+
+function generateMessage() {
+	specificStates = Object.keys(messages.stateSpecific);
+	for (i = 0; i < specificStates.length; i++) {
+		if (currentState === specificStates[i]) {
+			textBoxValue = messages.stateSpecific[specificStates[i]];
+			break;
+		} else {
+			messages.randomMessage.sort(() => Math.random() - 0.5);
+			textBoxValue = messages.randomMessage[0];
+		}
+	}
 }
 
 initSplash();
