@@ -6,7 +6,6 @@ The year is 2124. After decades of sectarian violence, a tyrannical regime hell-
 of geographical eduction has consolidated power. Under its rule citizens are subject to on-the-spot geography 
 questionnaires known as "Border Checks." Those who resist become prisoners of the state, those who fail 
 are never heard from again.
-
 Rack your brain or be sent to the gulags in round after round of exhilerating Border Check!
 
 ![Game Example](assets/exampleView.png)

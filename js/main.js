@@ -397,7 +397,9 @@ function renderStateBoard() {
 }
 
 function renderTextBox() {
-	generateMessage();
+	if (numFailures < 3) {
+		generateMessage();
+	}
 	textBoxEl.textContent = textBoxValue;
 	textBoxEl.classList.add('animated', 'bounceInDown');
 	textBoxEl.addEventListener('animationend', function() {
