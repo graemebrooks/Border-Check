@@ -88,7 +88,7 @@ const statesObj = {
 	MD: {
 		name: 'MARYLAND',
 		id: '18',
-		bStates: [ 'VIRGINIA', 'WEST VIRGINIA', 'DELAWARE', 'PENNSYLVANNIA' ]
+		bStates: [ 'VIRGINIA', 'WEST VIRGINIA', 'DELAWARE', 'PENNSYLVANIA' ]
 	},
 	MA: {
 		name: 'MASSACHUSETTS',
