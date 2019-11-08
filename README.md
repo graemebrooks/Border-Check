@@ -10,6 +10,7 @@ Rack your brain or be sent to the gulags in round after round of exhilerating Bo
 
 ![Game Example](assets/exampleView.png)
 
+Link to game:
 [Border Check](https://graemebrooks.github.io/Border-Check/)
 
 ## Purpose
