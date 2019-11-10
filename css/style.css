@@ -229,6 +229,7 @@ input:focus {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
+	align-items: flex-end;
 }
 
 #corner-papers {
